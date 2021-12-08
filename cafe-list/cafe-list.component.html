@@ -1,0 +1,35 @@
+<div class="list">
+    <div class="header">
+        <div class="head">
+            <h2>California Cafe Directory</h2>
+        </div>
+        <div class="search ">
+            <input type="text" name="searchText" [(ngModel)]="searchText" placeholder="search cafe..."id="form1">
+        </div>
+    </div>    
+    <table class="table table-striped">
+        <thead class=" thead thead-dark">
+            <tr>
+                <th scope="col">S No</th>
+                <th scope="col">Cafe Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Postal Code</th>
+                <th scope="col">Lat</th>
+                <th scope="col">Long</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of collection |filter:searchText">
+                <td>{{list.sno}}</td>
+                <td>{{list.name}}</td> 
+                <td>{{list.locality}}</td>
+                <td>{{list.postal_code}}</td>
+                <td>{{list.lat}}</td>
+                <td>{{list.long}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    
